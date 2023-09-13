@@ -1,4 +1,4 @@
-package Model;
+package javaSorting.Model;
 
 public class Element {
     private int size_array;

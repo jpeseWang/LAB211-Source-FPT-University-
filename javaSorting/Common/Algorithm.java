@@ -1,4 +1,4 @@
-package Common;
+package javaSorting.Common;
 
 public class Algorithm {
     public void bubbleSort(int[] arr) {

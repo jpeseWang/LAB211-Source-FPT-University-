@@ -1,4 +1,4 @@
-package Controller;
+package javaSorting.Controller;
 
 import Common.Algorithm;
 import Common.Library;
