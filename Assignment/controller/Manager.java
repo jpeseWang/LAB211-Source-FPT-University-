@@ -13,7 +13,8 @@ import Assignment.view.Menu;
 public class Manager extends Menu {
 
     public Manager() {
-        super("CANDIDATE MANAGEMENT", new String[] { "Experience", "Fresher", "Internship", "Searching", "Exit" });
+        super("===== CANDIDATE MANAGEMENT =====",
+                new String[] { "Experience", "Fresher", "Internship", "Searching", "Exit" });
     }
 
     @Override
@@ -40,7 +41,7 @@ public class Manager extends Menu {
         }
     }
 
-    public static void createCandidate(ArrayList<Candidate> candidates,
+    public void createCandidate(ArrayList<Candidate> candidates,
             int type) {
 
         while (true) {
@@ -86,7 +87,7 @@ public class Manager extends Menu {
     }
 
     // allow user create experience
-    public static void createExperience(ArrayList<Candidate> candidates,
+    public void createExperience(ArrayList<Candidate> candidates,
             Candidate candidate) {
         System.out.print("Enter year of experience: ");
         int yearExperience = Validation.checkInputExprience(candidate.getBirthDate());
@@ -115,7 +116,7 @@ public class Manager extends Menu {
     }
 
     // allow user create internship
-    public static void createInternship(ArrayList<Candidate> candidates,
+    public void createInternship(ArrayList<Candidate> candidates,
             Candidate candidate) {
         System.out.print("Enter major: ");
         String major = Validation.checkInputString();
@@ -132,7 +133,7 @@ public class Manager extends Menu {
     }
 
     // allow user search candidate by name
-    public static void searchCandidate(ArrayList<Candidate> candidates) {
+    public void searchCandidate(ArrayList<Candidate> candidates) {
         printListNameCandidate(candidates);
         System.out.print("Enter andidate name (First name or Last name): ");
         String nameSearch = Validation.checkInputString();
@@ -148,33 +149,28 @@ public class Manager extends Menu {
     }
 
     // display list name candidate
-    public static void printListNameCandidate(ArrayList<Candidate> candidates) {
-        System.err.println("Experience Candidate");
+    public void printListNameCandidate(ArrayList<Candidate> candidates) {
+        System.err.println("===========EXPERIENCE CANDIDATE============");
         for (Candidate candidate : candidates) {
             if (candidate instanceof Experience) {
                 System.out.println(candidate.getFirstName() + " "
                         + candidate.getLastName());
             }
         }
-        System.err.println("Fresher Candidate");
+        System.err.println("==========FRESHER CANDIDATE==============");
         for (Candidate candidate : candidates) {
             if (candidate instanceof Fresher) {
                 System.out.println(candidate.getFirstName() + " "
                         + candidate.getLastName());
             }
         }
-        System.err.println("Internship Candidate");
+        System.err.println("===========INTERN CANDIDATE==============");
         for (Candidate candidate : candidates) {
             if (candidate instanceof Internship) {
                 System.out.println(candidate.getFirstName() + " "
                         + candidate.getLastName());
             }
         }
-    }
-
-    public static void main(String[] args) {
-        Manager manager = new Manager();
-        manager.run();
     }
 
 }

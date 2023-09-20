@@ -16,10 +16,10 @@ public class Library {
         return sc.nextLine();
     }
 
-    public int getInt(String promt, int m, int n) {
+    public int getInt(String prompt, int m, int n) {
         int a = -1;
         while (true) {
-            System.out.print(promt + ": ");
+            System.out.print(prompt + ": ");
             try {
                 String s = sc.nextLine();
                 a = Integer.parseInt(s);

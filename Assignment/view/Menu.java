@@ -23,11 +23,11 @@ public abstract class Menu<T> {
 
     public void display() {
         System.out.println(title);
-        System.out.println("--------------------------------");
+        System.out.println("===============================");
         for (int i = 0; i < mChon.size(); i++) {
             System.out.println((i + 1) + "." + mChon.get(i));
         }
-        System.out.println("--------------------------------");
+        System.out.println("===============================");
     }
 
     public int getSelected() {
