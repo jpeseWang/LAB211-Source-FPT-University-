@@ -8,18 +8,36 @@ import Assignment.model.Candidate;
 import Assignment.model.Internship;
 import Assignment.model.Fresher;
 import Assignment.model.Experience;
+import Assignment.view.Menu;
 
-public class Manager {
+public class Manager extends Menu {
 
-    public static int menu() {
-        System.out.println("1. Experience");
-        System.out.println("2. Fresher");
-        System.out.println("3. Internship");
-        System.out.println("4. Searching");
-        System.out.println("5. Exit");
-        System.out.print("Enter your choice: ");
-        int choice = Validation.checkInputIntLimit(1, 5);
-        return choice;
+    public Manager() {
+        super("CANDIDATE MANAGEMENT", new String[] { "Experience", "Fresher", "Internship", "Searching", "Exit" });
+    }
+
+    @Override
+    public void execute(int n) {
+        ArrayList<Candidate> candidates = new ArrayList<>();
+        switch (n) {
+            case 1:
+                createCandidate(candidates, 0);
+                break;
+            case 2:
+                createCandidate(candidates, 1);
+                break;
+            case 3:
+                createCandidate(candidates, 2);
+                break;
+            case 4:
+                searchCandidate(candidates);
+                break;
+            case 5:
+                System.out.println("Exiting the candidate management menu.");
+                break;
+            default:
+                System.out.println("Invalid choice. Please choose a valid option.");
+        }
     }
 
     public static void createCandidate(ArrayList<Candidate> candidates,
@@ -152,6 +170,11 @@ public class Manager {
                         + candidate.getLastName());
             }
         }
+    }
+
+    public static void main(String[] args) {
+        Manager manager = new Manager();
+        manager.run();
     }
 
 }
