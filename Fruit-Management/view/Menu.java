@@ -37,7 +37,6 @@ public abstract class Menu<T> {
         display();
         return l.getInt("Enter your choice", 1, mChon.size() + 1);
     }
-    // -------------------------------------------
 
     public abstract void execute(int n);
     // -------------------------------------------

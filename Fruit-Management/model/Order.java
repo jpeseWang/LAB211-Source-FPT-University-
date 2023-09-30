@@ -34,24 +34,18 @@ public class Order {
         this.Name = Name;
     }
 
-    public int getQuanlity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuanlity(int quanlity) {
-        this.quantity = quanlity;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
-    /**
-     * @return the price
-     */
     public double getPrice() {
         return price;
     }
 
-    /**
-     * @param price the price to set
-     */
     public void setPrice(double price) {
         this.price = price;
     }

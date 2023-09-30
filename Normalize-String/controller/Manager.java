@@ -1,3 +1,4 @@
+package controller;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -12,7 +13,7 @@ public class Manager {
     public static String formatOneSpaceSpecial(String line, String character) {
         StringBuffer stringBuffer = new StringBuffer();
         String[] strings = line.split("\\s*\\" + character + "\\s*");
-        // appen every word and character special distance is one space
+        // append every word and character special distance is one space
         for (String oneWord : strings) {
             stringBuffer.append(oneWord + " " + character);
             stringBuffer.append(" ");

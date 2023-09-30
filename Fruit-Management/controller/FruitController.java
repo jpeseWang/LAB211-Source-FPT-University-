@@ -67,12 +67,12 @@ public class FruitController extends Menu {
     }
 
     public void shopping() {
-        /*
-         * if (ht.isEmpty()) {
-         * System.out.println("No Product");
-         * return;
-         * }
-         */
+
+        if (ht.isEmpty()) {
+            System.out.println("No Product");
+            return;
+        }
+
         displayFruit();
         String name = l.getString("Enter fruit name: ");
         int quantityOrder = l.getInt("Please input quantity", 1, 10);
@@ -90,7 +90,7 @@ public class FruitController extends Menu {
                 displayListOrder(list_o);
                 String customer = l.getString("Enter Customer of name: ");
                 ht.put(customer, list_o);
-                System.out.println("Add Successfull");
+                System.out.println("Add Successfully");
             }
         }
     }
@@ -99,8 +99,8 @@ public class FruitController extends Menu {
         double total = 0;
         for (Order o : list_o) {
             System.out.println("Id: " + o.getId() + " - Customer of name: " + o.getName() + " - quanlity: "
-                    + o.getQuanlity() + " - price: " + o.getPrice());
-            total += o.getPrice() * o.getQuanlity();
+                    + o.getQuantity() + " - price: " + o.getPrice());
+            total += o.getPrice() * o.getQuantity();
         }
         System.out.println("Total: " + total);
     }
