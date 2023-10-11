@@ -21,7 +21,7 @@ public class Manager {
     }
 
     // allow user add doctor
-    public static void addDoctor(ArrayList<Doctor> ld) {
+    public void addDoctor(ArrayList<Doctor> ld) {
         System.out.print("Enter code: ");
         String code = Validate.checkInputString();
         // check code exist or not
@@ -45,7 +45,7 @@ public class Manager {
     }
 
     // allow user update doctor
-    public static void updateDoctor(ArrayList<Doctor> ld) {
+    public void updateDoctor(ArrayList<Doctor> ld) {
         System.out.print("Enter code: ");
         String code = Validate.checkInputString();
         // check code exist or not
@@ -75,7 +75,7 @@ public class Manager {
     }
 
     // allow user delete doctor
-    public static void deleteDoctor(ArrayList<Doctor> ld) {
+    public void deleteDoctor(ArrayList<Doctor> ld) {
         System.out.print("Enter code: ");
         String code = Validate.checkInputString();
         Doctor doctor = getDoctorByCode(ld, code);
@@ -89,7 +89,7 @@ public class Manager {
     }
 
     // allow user search doctor
-    public static void searchDoctor(ArrayList<Doctor> ld) {
+    public void searchDoctor(ArrayList<Doctor> ld) {
         System.out.println("-------- SEARCH DOCTOR ---------");
         System.out.print("Enter name: ");
         String nameSearch = Validate.checkInputString();
@@ -109,7 +109,7 @@ public class Manager {
     }
 
     // get docter by code
-    public static Doctor getDoctorByCode(ArrayList<Doctor> ld, String code) {
+    public Doctor getDoctorByCode(ArrayList<Doctor> ld, String code) {
         for (Doctor doctor : ld) {
             if (doctor.getCode().equalsIgnoreCase(code)) {
                 return doctor;
@@ -119,7 +119,7 @@ public class Manager {
     }
 
     // get list found by name
-    public static ArrayList<Doctor> listFoundByName(ArrayList<Doctor> ld, String name) {
+    public ArrayList<Doctor> listFoundByName(ArrayList<Doctor> ld, String name) {
         ArrayList<Doctor> listFoundByName = new ArrayList<>();
         for (Doctor doctor : ld) {
             if (doctor.getName().contains(name)) {
