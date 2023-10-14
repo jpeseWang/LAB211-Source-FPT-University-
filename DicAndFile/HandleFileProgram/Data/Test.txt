@@ -1,0 +1,4 @@
+Name;Address;Money
+Codie;New Jersey;1030.0
+NHuy;Bangkok;1230.0
+Glot;Miami;1780.0
